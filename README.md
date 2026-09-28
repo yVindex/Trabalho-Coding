@@ -1,4 +1,4 @@
 # Sistema de Cadastro de Alunos em Python
 
-**Nome: Guilherme Barbosa da Silva França
-**Matricula:  01879072
+Nome: Guilherme Barbosa da Silva França
+01879072
