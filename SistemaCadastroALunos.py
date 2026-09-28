@@ -11,7 +11,17 @@ def menu_sistema_cadastro():
     print("---------------------------------------------------")
 
 def adicionar_aluno():
-    nome = input("Digite o nome do aluno: ")
+    while True:
+        nome = input("Digite o nome do aluno: ")
+        if nome == "":
+            print("O nome não pode ficar vazio.")
+            continue
+        else:
+            break
+
+
+
+
     while True:
         idade = input("Digite a idade do aluno: ")
 
