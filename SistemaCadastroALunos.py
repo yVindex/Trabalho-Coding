@@ -66,7 +66,7 @@ def listar_alunos():
 
 
 def buscar_aluno():
-    nome_buscar = input("Digite o nome do aluno: ")
+    nome_buscar = input("Digite o nome do aluno que deseja buscar: ")
 
     encontrado = False
 
@@ -82,3 +82,15 @@ def buscar_aluno():
 
     if not encontrado:
         print("Aluno não encontrado.")
+
+
+def remover_aluno():
+    nome_remover = input("Digite o nome do aluno que deseja remover: ")
+
+    for aluno in alunos:
+        if aluno["nome"].lower() == nome_remover.lower():
+            alunos.remove(aluno)
+            print("Aluno removido com sucesso!")
+            return
+
+    print("Aluno não encontrado.")
