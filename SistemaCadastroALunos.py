@@ -57,15 +57,19 @@ def listar_alunos():
         print("Nenhum aluno cadastrado.")
         return
     
-    print("-----------Lista de Alunos-----------")
+    print("------------------Lista de Alunos------------------")
     for aluno in alunos:
             print(f"Nome: {aluno['nome']}")
             print(f"Idade: {aluno['idade']} anos")
             print(f"Nota: {aluno['nota']:.1f}")
-            print("------------------------")
+            print("---------------------------------------------------")
 
 
 def buscar_aluno():
+    if len(alunos) == 0:
+            print("Nenhum aluno cadastrado.")
+            return
+    
     nome_buscar = input("Digite o nome do aluno que deseja buscar: ")
 
     encontrado = False
@@ -85,6 +89,11 @@ def buscar_aluno():
 
 
 def remover_aluno():
+
+    if len(alunos) == 0:
+            print("Nenhum aluno cadastrado.")
+            return
+    
     nome_remover = input("Digite o nome do aluno que deseja remover: ")
 
     for aluno in alunos:
@@ -97,16 +106,44 @@ def remover_aluno():
 
 
 def mostrar_media():
+
     if len(alunos) == 0:
-        print("Não há alunos cadastrados para calcular a média.")
-        return
+            print("Nenhum aluno cadastrado.")
+            return
     else:
      soma = 0
 
     for aluno in alunos:
-        soma += alunos["nota"]
+        soma += aluno["nota"]
 
 
     media = soma / len(alunos)
     print(f"A media geral é {media:.2f}")
 
+
+while True:
+    menu_sistema_cadastro()
+    opcao = input("Digite uma opção: ")
+    print("---------------------------------------------------")
+
+    if opcao == "1":
+        adicionar_aluno()
+
+    elif opcao == "2":
+        listar_alunos()
+
+    elif opcao == "3":
+        buscar_aluno()
+
+    elif opcao == "4":
+        remover_aluno()
+
+    elif opcao == "5":
+        mostrar_media()
+
+    elif opcao == "6":
+        print("Saindo......")
+        break
+
+    else:
+        print("Opção inválida. Digite uma opção de 1 a 6.")
