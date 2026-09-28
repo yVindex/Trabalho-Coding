@@ -94,3 +94,19 @@ def remover_aluno():
             return
 
     print("Aluno não encontrado.")
+
+
+def mostrar_media():
+    if len(alunos) == 0:
+        print("Não há alunos cadastrados para calcular a média.")
+        return
+    else:
+     soma = 0
+
+    for aluno in alunos:
+        soma += alunos["nota"]
+
+
+    media = soma / len(alunos)
+    print(f"A media geral é {media:.2f}")
+
