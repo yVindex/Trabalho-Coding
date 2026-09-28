@@ -29,7 +29,7 @@ def adicionar_aluno():
         nota = input("Digite a nota do aluno: ")
 
         if nota.isdigit():
-            nota = int(idade)
+            nota = int(nota)
         else:
             print("A nota deve ser um NUMERO.")
             continue
@@ -38,5 +38,30 @@ def adicionar_aluno():
             break
         else:
              print("A nota deve estar entre 0 e 10.")
+
+
+    aluno = {
+            "nome": nome,
+            "idade": idade,
+            "nota": nota
+        }
+    alunos.append(aluno)
+
+    print("Aluno cadastrado com sucesso!")
+
+
+
+def listar_alunos():
+    if len(alunos) == 0:
+        print("Nenhum aluno cadastrado.")
+        return
+    
+    print("-----------Lista de Alunos-----------")
+    for aluno in alunos:
+            print(f"Nome: {aluno['nome']}")
+            print(f"Idade: {aluno['idade']} anos")
+            print(f"Nota: {aluno['nota']:.1f}")
+            print("------------------------")
+
 
     
