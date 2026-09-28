@@ -8,6 +8,7 @@ def menu_sistema_cadastro():
     print("4. Remover aluno ")
     print("5. Mostrar média geral das notas ")
     print("6. Sair ")
+    print("---------------------------------------------------")
 
 def adicionar_aluno():
     nome = input("Digite o nome do aluno: ")
@@ -64,4 +65,20 @@ def listar_alunos():
             print("------------------------")
 
 
-    
+def buscar_aluno():
+    nome_buscar = input("Digite o nome do aluno: ")
+
+    encontrado = False
+
+    for aluno in alunos:
+        if aluno["nome"].lower() == nome_buscar.lower():
+            print("\nAluno encontrado!")
+            print(f"Nome: {aluno['nome']}")
+            print(f"Idade: {aluno['idade']} anos")
+            print(f"Nota: {aluno['nota']:.1f}")
+
+            encontrado = True
+            break
+
+    if not encontrado:
+        print("Aluno não encontrado.")
