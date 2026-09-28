@@ -29,11 +29,19 @@ def adicionar_aluno():
     while True:
         nota = input("Digite a nota do aluno: ")
 
-        if nota.isdigit():
-            nota = int(nota)
+        nota = nota.replace(",", ".")
+
+        if nota.count(".") <= 1:
+            if nota.replace(".", "").isdigit():
+                nota = float(nota)
+            else:
+                print("A nota deve ser um NUMERO.")
+                continue
         else:
-            print("A nota deve ser um NUMERO.")
+            print("Digite uma nota valida")
             continue
+
+        
 
         if 0 <= nota <= 10:
             break
